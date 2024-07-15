@@ -5,4 +5,5 @@ This repository documents my journey learning Data Structures and Algorithms usi
 - Arrays(just starting :) )
 
 ## My progress
-- [x] Learning basic array operations 
+- [x] Completed 1D Arrays
+- [x] Learning vectors 
