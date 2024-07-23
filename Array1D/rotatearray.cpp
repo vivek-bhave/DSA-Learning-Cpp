@@ -1,3 +1,6 @@
+//Q. WAP to Rotate a vector elements k times 
+// Ex: Vector: 12 34 56 78 ; k = 3
+// Rotated vector: 34 56 78 12
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -32,9 +35,11 @@ int main(){
      l = v.size();
     cout<<"Enter the number of rotation: ";
     cin>> k;
-    if(k>m){k = k % m;}
-   reverse(0,l-1-k,v);
-   reverse(l-k,l-1,v);
-   reverse(0,l-1,v);
+    if(k>m){k = k % m;} // when k>size ex:size = 5, k = 7 k%size = 2 to keep k<size
+    //These following three codes are for rotating vector
+    // vector: 23 45 67 76 54 ; k = 3; l= size = 5
+   reverse(0,l-1-k,v);// v: 45 23 67 76 54 (reverses: 45 23)
+   reverse(l-k,l-1,v);// v: 45 23 54 76 67 (reverses: 67 76 54)
+   reverse(0,l-1,v);// v: 67 76 54 23 45 rotated array
    Display(v);
 }
