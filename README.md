@@ -6,5 +6,5 @@ This repository documents my journey learning Data Structures and Algorithms usi
 
 ## My progress
 - [x] Completed 1D Arrays
-- [x] completed vectors 
-- [x] learning strings
+- [x] Completed vectors 
+- [x] Learning strings
