@@ -1,8 +1,9 @@
 #include<iostream>
 using namespace std;
 int main(){
-char c[4] = {'a','b','c','d'};
- for(int i=0;i<4;i++){
-    cout<< c[i] <<" "; 
- }
+char c[] = {'a','b','c','d'};
+ cout<< c << endl;
+ //String with Null Operator(\0)
+ char d[] = {'a','b','\0','c','d'};
+ cout << d;
 }
