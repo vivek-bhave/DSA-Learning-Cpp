@@ -1,4 +1,5 @@
 // Q. Generate all subsets (power set) of a given array using recursion.
+//
 // This recursive structure explores every possibility by making a decision at each index: 
 // whether to include the current element or not.
 //
@@ -9,6 +10,11 @@
 //
 // 📌 Pattern: Choice Diagram (Include or Exclude)
 // 🧠 Useful for building intuition about backtracking & subset generation
+//
+// 🧭 How to think about problems with two recursive calls:
+// 1. Use the first call until its particular duty finishes (e.g., excluding the element).
+// 2. Then think of what the next duty (recursive call) should be (e.g., including the element).
+// 3. This way, reach the base case and return, allowing full exploration of all branches.
 
 #include<iostream>
 #include<vector>
