@@ -12,36 +12,38 @@
 //
 // 🧭 Tip: Use substrings carefully, as they create new strings and preserve recursion purity.
 
+
 #include<iostream>
+#include<string>
+#include<algorithm>
+#include<sstream>
 #include<vector>
 using namespace std;
 
-void generateStringSubsets(string ans, string original, vector<string>& subsets) {
-    if(original.length() == 0) {
-        subsets.push_back(ans);
+void storesubset(string ans,string original,vector<string>&s){
+    if(original.length()==0){
+        s.push_back(ans);
         return;
     }
-
-    char ch = original[0];
-    string rest = original.substr(1);
-
-    // Include the current character
-    generateStringSubsets(ans + ch, rest, subsets);
-
-    // Exclude the current character
-    generateStringSubsets(ans, rest, subsets);
-}
-
-int main() {
-    string input = "abc";
-    vector<string> subsets;
-
-    generateStringSubsets("", input, subsets);
-
-    // Output all generated subsets
-    for(const string& str : subsets) {
-        cout << str << endl;
+    bool found = false;
+    for(int i=0;i<ans.size();i++){
+        for(int j=0;j<original.size();j++){
+        if(ans[i]==original[j]) found = true;
+        }
     }
-
-    return 0;
+ if(found==true){   
+char ch = original[0];
+original = original.substr(1);
+storesubset(ans+ch,original,s);}
+storesubset(ans,original,s);
+   
+}
+int main(){
+    string str = "aba";
+    vector<string> s;
+storesubset("",str,s);
+for(int i=0;i<s.size();i++){
+    cout << s[i] << endl;
+}
+cout << 4;
 }
