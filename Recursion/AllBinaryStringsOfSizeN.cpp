@@ -11,7 +11,9 @@ void displaybinarystring(string ans,int n){
       cout << ans <<endl;
       return;
     }
+        // Always safe to place '0'
     displaybinarystring(ans+'0',n);
+        // Only place '1' if previous bit is not '1'
 if(ans.empty() || ans.back() =='0') // --> This condition avoids those strings with consecutive 1's
     displaybinarystring(ans+'1',n);
 
