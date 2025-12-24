@@ -23,3 +23,4 @@ while j < len(s):
 
 print(count)
 # T(n) = O(3*3*n) = O(n)
+# Use set to identify the presence of duplicates not for how many
