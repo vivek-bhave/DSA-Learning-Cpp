@@ -1,0 +1,89 @@
+Problem: Minimum Time to Complete Trips
+
+Pattern:
+Binary Search on Answer
+
+Core Monotonicity:
+If some time T works,
+then every larger time also works.
+
+Why?
+More time allows buses to complete more trips.
+
+--------------------------------------------------
+
+What are we searching for?
+Minimum feasible time.
+
+--------------------------------------------------
+
+LOW:
+Minimum physically possible time.
+
+low = 1
+
+Reason:
+Time cannot be 0.
+
+--------------------------------------------------
+
+HIGH:
+Guaranteed feasible time.
+
+high = min(time) * totalTrips
+
+Reason:
+Even if only the fastest bus works,
+it can complete all trips alone within this time.
+
+--------------------------------------------------
+
+Feasibility Function:
+Can all buses together complete
+at least totalTrips within mid time?
+
+For each bus:
+tripsByBus = mid / time[i]
+
+Total Trips:
+sum += mid / time[i]
+
+If:
+sum >= totalTrips
+
+Then:
+mid works.
+
+--------------------------------------------------
+
+Binary Search Logic:
+
+if(mid works){
+    ans = mid;
+    high = mid - 1;
+}
+else{
+    low = mid + 1;
+}
+
+--------------------------------------------------
+
+Key Insight:
+We are not searching on array indices.
+We are searching on answer space (time).
+
+--------------------------------------------------
+
+Common Mistakes:
+1. Using int instead of long long.
+2. Wrong high value.
+3. Forgetting monotonicity.
+4. Thinking trips must equal totalTrips exactly.
+
+--------------------------------------------------
+
+Time Complexity:
+O(n log(high))
+
+Where:
+n = number of buses
